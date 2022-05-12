@@ -1,0 +1,41 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type":"cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databasename":"ResumeAzure",
+      "collectionName":"container",
+      "connectionStringSetting":"AzureCosmosDBConnectionString" ,
+      "partitionKey": "1",
+      "id": "1"  
+    },
+    {
+      "type":"cosmosDB",
+      "direction": "out",
+      "name": "outputDoc",
+      "databasename":"ResumeAzure",
+      "collectionName":"container",
+      "createIfNotExists": "true",
+      "connectionStringSetting":"AzureCosmosDBConnectionString" ,
+      "partitionKey": "1",
+      "id": "1" 
+    }
+  ]
+}

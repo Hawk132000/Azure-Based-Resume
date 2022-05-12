@@ -2,16 +2,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
     getVisitCount();
 })
 
-const functionApi = '';
+const functionApi = 'http://localhost:7071/api/CounterHttpTrigger';
 
 const getVisitCount = () => {
-    let count = 30;
-    fetch(functionApi).then(Response => {
-        return Response.json()
+    let count = 0;
+
+    fetch(functionApi).then(response => {
+        return response.json()
     }).then(response => {
-        console.log("website called API");
-        count = response.count;
-        document.getElementById("counter").innerText = count;
+        const count = response;
+        document.getElementById('counter').innerText = count;
     }).catch(function(error){
         console.log(error);
     });
