@@ -21,7 +21,7 @@
       "direction": "in",
       "name": "inputDocument",
       "databasename":"ResumeAzure",
-      "collectionName":"container",
+      "collectionName":"CounterContainer",
       "connectionStringSetting":"AzureCosmosDBConnectionString" ,
       "partitionKey": "1",
       "id": "1"  
@@ -31,7 +31,7 @@
       "direction": "out",
       "name": "outputDoc",
       "databasename":"ResumeAzure",
-      "collectionName":"container",
+      "collectionName":"CounterContainer",
       "createIfNotExists": "true",
       "connectionStringSetting":"AzureCosmosDBConnectionString" ,
       "partitionKey": "1",
